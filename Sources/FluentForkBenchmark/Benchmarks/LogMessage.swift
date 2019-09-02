@@ -1,5 +1,4 @@
 import Async
-import Fluent
 import Foundation
 
 public final class LogMessage<D>: Model where D: QuerySupporting {

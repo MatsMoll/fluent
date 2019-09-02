@@ -1,6 +1,6 @@
 import Async
 import Service
-import Fluent
+import FluentFork
 import Dispatch
 
 /// Benchmarks a Fluent database implementation.

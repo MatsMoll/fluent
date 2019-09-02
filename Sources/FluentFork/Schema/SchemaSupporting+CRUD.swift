@@ -31,7 +31,7 @@ extension SchemaSupporting {
     
     /// Convenience for deleting the schema for the supplied model type.
     public static func delete<Model>(_ model: Model.Type, on conn: Connection) -> Future<Void>
-        where Model: Fluent.Model, Model.Database == Self
+        where Model: FluentFork.Model, Model.Database == Self
     {
         return conn.fluentOperation {
             return schemaExecute(Model.Database.schemaCreate(Model.Database.schemaActionDelete, Model.entity), on: conn)

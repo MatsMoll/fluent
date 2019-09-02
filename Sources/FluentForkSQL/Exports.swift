@@ -1,2 +1,2 @@
-@_exported import Fluent
+@_exported import FluentFork
 @_exported import SQL

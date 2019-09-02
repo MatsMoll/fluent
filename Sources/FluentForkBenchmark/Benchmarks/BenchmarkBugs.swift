@@ -1,4 +1,4 @@
-import Fluent
+import FluentFork
 
 extension Benchmarker where Database: QuerySupporting {
     /// Benchmarking pipelining saves.

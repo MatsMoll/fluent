@@ -1,4 +1,4 @@
-import FluentBenchmark
+import FluentForkBenchmark
 import XCTest
 
 final class FluentTests: XCTestCase {

@@ -1,5 +1,4 @@
 import Async
-import Fluent
 import Foundation
 
 /// A pivot between pet and toy.

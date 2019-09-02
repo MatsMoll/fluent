@@ -1,5 +1,5 @@
 /// Updates schemas, capable of deleting fields.
-public final class SchemaUpdater<Model>: SchemaBuilder where Model: Fluent.Model, Model.Database: SchemaSupporting {
+public final class SchemaUpdater<Model>: SchemaBuilder where Model: FluentFork.Model, Model.Database: SchemaSupporting {
     /// See `SchemaBuilder`.
     public var schema: Model.Database.Schema
 
@@ -32,7 +32,7 @@ public final class SchemaUpdater<Model>: SchemaBuilder where Model: Fluent.Model
     /// - parameters:
     ///     - from: `KeyPath` to the local field.
     ///     - to: `KeyPath` to the foreign field.
-    public func deleteReference<T, U, Other>(from: KeyPath<Model, T>, to: KeyPath<Other, U>) where Other: Fluent.Model {
+    public func deleteReference<T, U, Other>(from: KeyPath<Model, T>, to: KeyPath<Other, U>) where Other: FluentFork.Model {
         let from = Model.Database.queryField(.keyPath(from))
         let to = Model.Database.queryField(.keyPath(to))
         let reference = Model.Database.schemaReference(from: from, to: to, onUpdate: nil, onDelete: nil)

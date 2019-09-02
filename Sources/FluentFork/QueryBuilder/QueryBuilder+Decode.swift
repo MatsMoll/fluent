@@ -13,7 +13,7 @@ extension QueryBuilder {
     /// - parameters:
     ///     - type: New model type `D` to also decode.
     /// - returns: `QueryBuilder` decoding type `(Result, D)`.
-    public func alsoDecode<M>(_ type: M.Type) -> QueryBuilder<Database, (Result, M)> where M: Fluent.Model {
+    public func alsoDecode<M>(_ type: M.Type) -> QueryBuilder<Database, (Result, M)> where M: FluentFork.Model {
         return alsoDecode(M.self, M.entity)
     }
     
@@ -29,7 +29,7 @@ extension QueryBuilder {
     /// - parameters:
     ///     - type: New model type `Optional<D>` to also decode.
     /// - returns: `QueryBuilder` decoding type `(Result, Optional<D>)`.
-    public func alsoDecode<M>(_ type: Optional<M>.Type) -> QueryBuilder<Database, (Result, M?)> where M: Fluent.Model {
+    public func alsoDecode<M>(_ type: Optional<M>.Type) -> QueryBuilder<Database, (Result, M?)> where M: FluentFork.Model {
         return alsoDecode(type, M.entity)
     }
 
@@ -84,7 +84,7 @@ extension QueryBuilder {
     /// - parameters:
     ///     - type: New decodable type `D` to decode.
     /// - returns: `QueryBuilder` decoding type `D`.
-    public func decode<Model>(_ type: Model.Type) -> QueryBuilder<Database, Model> where Model: Fluent.Model {
+    public func decode<Model>(_ type: Model.Type) -> QueryBuilder<Database, Model> where Model: FluentFork.Model {
         return decode(data: Model.self, Model.entity)
     }
     
@@ -99,7 +99,7 @@ extension QueryBuilder {
     /// - parameters:
     ///     - type: New decodable type `Optional<D>` to decode.
     /// - returns: `QueryBuilder` decoding type `Optional<D>`.
-    public func decode<Model>(_ type: Optional<Model>.Type) -> QueryBuilder<Database, Model?> where Model: Fluent.Model {
+    public func decode<Model>(_ type: Optional<Model>.Type) -> QueryBuilder<Database, Model?> where Model: FluentFork.Model {
         return decode(data: type, Model.entity)
     }
     

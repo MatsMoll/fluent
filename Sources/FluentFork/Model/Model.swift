@@ -110,7 +110,7 @@ public protocol Model: AnyModel, Reflectable {
     // MARK: ID
 
     /// The associated Identifier type. Usually `Int` or `UUID`. Must conform to `ID`.
-    associatedtype ID: Fluent.ID
+    associatedtype ID: FluentFork.ID
 
     /// Typealias for Swift `KeyPath` to an optional ID for this model.
     typealias IDKey = WritableKeyPath<Self, ID?>

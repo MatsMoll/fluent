@@ -1,5 +1,4 @@
 import Async
-import Fluent
 import Foundation
 
 public final class User<D>: Model where D: QuerySupporting {

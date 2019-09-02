@@ -1,5 +1,4 @@
 import Async
-import Fluent
 import Foundation
 
 public final class Pet<Database>: Model where Database: QuerySupporting {

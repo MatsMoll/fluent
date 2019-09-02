@@ -1,4 +1,4 @@
-import Fluent
+import FluentFork
 
 internal final class Foo<D>: Model where D: QuerySupporting {
     /// See Model.Database

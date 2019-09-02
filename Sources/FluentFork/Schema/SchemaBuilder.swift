@@ -11,7 +11,7 @@
 public protocol SchemaBuilder: class {
     /// Associated `Model` type this builder is using.
     associatedtype Model
-        where Model: Fluent.Model, Model.Database: SchemaSupporting
+        where Model: FluentFork.Model, Model.Database: SchemaSupporting
 
     /// The schema query being built.
     var schema: Model.Database.Schema { get set }
@@ -84,7 +84,7 @@ extension SchemaBuilder {
         to: KeyPath<Other, U>,
         onUpdate: Model.Database.SchemaReferenceAction? = nil,
         onDelete: Model.Database.SchemaReferenceAction? = nil
-    ) where Other: Fluent.Model {
+    ) where Other: FluentFork.Model {
         let from = Model.Database.queryField(.keyPath(from))
         let to = Model.Database.queryField(.keyPath(to))
         let reference = Model.Database.schemaReference(from: from, to: to, onUpdate: onUpdate, onDelete: onDelete)

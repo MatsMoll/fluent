@@ -1,4 +1,4 @@
-import Fluent
+import FluentFork
 
 extension Benchmarker where Database: JoinSupporting & QuerySupporting {
     /// The actual benchmark.

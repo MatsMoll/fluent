@@ -1,5 +1,4 @@
 import Async
-import Fluent
 import Foundation
 
 final class KitchenSink<D>: Model where D: QuerySupporting {

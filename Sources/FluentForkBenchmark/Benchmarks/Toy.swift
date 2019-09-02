@@ -1,5 +1,4 @@
 import Async
-import Fluent
 import Foundation
 
 public struct Toy<Database>: Model where Database: QuerySupporting {

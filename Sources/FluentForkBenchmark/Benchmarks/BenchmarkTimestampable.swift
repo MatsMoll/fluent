@@ -1,4 +1,4 @@
-import Fluent
+import FluentFork
 
 extension Benchmarker where Database: QuerySupporting {
     private func _benchmarkStruct(on conn: Database.Connection) throws {
