@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "Fluent",
+    name: "FluentFork",
     products: [
-        .library(name: "Fluent", targets: ["Fluent"]),
-        .library(name: "FluentSQL", targets: ["FluentSQL"]),
-        .library(name: "FluentBenchmark", targets: ["FluentBenchmark"]),
+        .library(name: "FluentFork", targets: ["FluentFork"]),
+        .library(name: "FluentForkSQL", targets: ["FluentForkSQL"]),
+        .library(name: "FluentForkBenchmark", targets: ["FluentForkBenchmark"]),
     ],
     dependencies: [
         // 🌎 Utility package containing tools for byte manipulation, Codable, OS APIs, and debugging.
@@ -25,9 +25,9 @@ let package = Package(
         .package(url: "https://github.com/vapor/sql.git", from: "2.0.0"),
     ],
     targets: [
-        .target(name: "Fluent", dependencies: ["Async", "Console", "Command", "Core", "DatabaseKit", "Logging", "Service"]),
-        .target(name: "FluentSQL", dependencies: ["Fluent", "SQL"]),
-        .testTarget(name: "FluentTests", dependencies: ["FluentBenchmark"]),
-        .target(name: "FluentBenchmark", dependencies: ["Fluent"]),
+        .target(name: "FluentFork", dependencies: ["Async", "Console", "Command", "Core", "DatabaseKit", "Logging", "Service"]),
+        .target(name: "FluentForkSQL", dependencies: ["FluentFork", "SQL"]),
+        .testTarget(name: "FluentForkTests", dependencies: ["FluentForkBenchmark"]),
+        .target(name: "FluentForkBenchmark", dependencies: ["FluentFork"]),
     ]
 )
